@@ -1,0 +1,183 @@
+:root {
+  --putih: #ffffff;
+  --abu-terang: #f5f5f5;
+  --abu: #e8e8e8;
+  --abu-tua: #9e9e9e;
+  --hitam: #222222;
+  --hitam-soft: #444444;
+  --biru: #1a5fa8;
+  --biru-muda: #2d7dd2;
+  --biru-bg: #eaf2fb;
+  --merah: #c0392b;
+  --hijau: #1e8449;
+  --kuning: #d68910;
+  --border: #d8d8d8;
+  --shadow: 0 2px 8px rgba(0,0,0,0.10);
+  --font-utama: 'Poppins', sans-serif;
+  --font-kode: 'Source Code Pro', monospace;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--putih);
+  color: var(--hitam);
+  font-family: var(--font-utama);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-utama);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--abu-terang); }
+::-webkit-scrollbar-thumb { background: var(--biru); border-radius: 3px; }
+
+/* Seleksi teks */
+::selection {
+  background: var(--biru);
+  color: white;
+}
+
+/* Animasi dasar */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* ===== LAYOUT ===== */
+.halaman {
+  min-height: 100vh;
+  padding: 90px 24px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ===== TOMBOL ===== */
+.tombol-utama {
+  display: inline-block;
+  padding: 10px 26px;
+  background: var(--biru);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.tombol-utama:hover {
+  background: var(--biru-muda);
+  box-shadow: 0 4px 12px rgba(26,95,168,0.3);
+}
+
+.tombol-outline {
+  display: inline-block;
+  padding: 10px 26px;
+  background: transparent;
+  color: var(--biru);
+  border: 2px solid var(--biru);
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.tombol-outline:hover {
+  background: var(--biru);
+  color: white;
+}
+
+/* ===== KARTU ===== */
+.kartu {
+  background: var(--putih);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== JUDUL SECTION ===== */
+.judul-section {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--hitam);
+  margin-bottom: 6px;
+  border-left: 4px solid var(--biru);
+  padding-left: 12px;
+}
+
+.sub-judul {
+  font-size: 0.9rem;
+  color: var(--abu-tua);
+  margin-bottom: 28px;
+  padding-left: 16px;
+}
+
+/* ===== INPUT ===== */
+.input-field {
+  width: 100%;
+  padding: 9px 13px;
+  border: 1.5px solid var(--border);
+  border-radius: 5px;
+  font-family: var(--font-utama);
+  font-size: 0.95rem;
+  color: var(--hitam);
+  background: var(--putih);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input-field:focus {
+  border-color: var(--biru);
+}
+
+.input-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--hitam-soft);
+  margin-bottom: 5px;
+}
+
+/* ===== BADGE ===== */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-biru { background: var(--biru-bg); color: var(--biru); }
+.badge-hijau { background: #e8f8f0; color: var(--hijau); }
+.badge-merah { background: #fdecea; color: var(--merah); }
+.badge-kuning { background: #fef9e7; color: var(--kuning); }
+.badge-abu { background: #f0f0f0; color: #666; }
